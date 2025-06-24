@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will AI Recommend Your TCM Practice?</title>
+    <!-- Inline styles will be injected from styles.css -->
+    <style>
+    <!-- INLINE_STYLES -->
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Will AI Recommend Your TCM Practice?</h1>
+            <p>See exactly what ChatGPT, Perplexity, and Google AI say about your practice</p>
+        </div>
+        
+        <div class="step-indicator">
+            <div class="step active">1</div>
+            <div class="step">2</div>
+            <div class="step">3</div>
+        </div>
+        
+        <form id="simulatorForm" class="form-section">
+            <div class="form-group">
+                <label for="practiceName">Practice Name *</label>
+                <input type="text" id="practiceName" name="practiceName" required placeholder="e.g., Harmony Acupuncture & Wellness">
+            </div>
+            <div class="form-group">
+                <label for="location">City, State *</label>
+                <input type="text" id="location" name="location" required placeholder="e.g., Austin, TX">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+                <label for="yearsInPractice">Years in Practice</label>
+                <select id="yearsInPractice" name="yearsInPractice">
+                    <option value="0-1">0-1 years</option>
+                    <option value="2-5">2-5 years</option>
+                    <option value="6-10">6-10 years</option>
+                    <option value="11-20">11-20 years</option>
+                    <option value="20+">20+ years</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Services Offered (check all that apply)</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="acupuncture" name="services" value="acupuncture">
+                        <label for="acupuncture">Acupuncture</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="cupping" name="services" value="cupping">
+                        <label for="cupping">Cupping Therapy</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="herbs" name="services" value="herbs">
+                        <label for="herbs">Chinese Herbal Medicine</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="massage" name="services" value="massage">
+                        <label for="massage">Therapeutic Massage</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="nutrition" name="services" value="nutrition">
+                        <label for="nutrition">Nutritional Counseling</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="fertility" name="services" value="fertility">
+                        <label for="fertility">Fertility Support</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Current Online Presence (check all that apply)</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="website" name="presence" value="website">
+                        <label for="website">Professional Website</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="google" name="presence" value="google">
+                        <label for="google">Google Business Profile</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="facebook" name="presence" value="facebook">
+                        <label for="facebook">Facebook Page</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="instagram" name="presence" value="instagram">
+                        <label for="instagram">Instagram Account</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="yelp" name="presence" value="yelp">
+                        <label for="yelp">Yelp Listing</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="none" name="presence" value="none">
+                        <label for="none">None of the above</label>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="submit-btn">🔍 Run AI Search Simulation</button>
+        </form>
+        
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <h3>Analyzing your practice visibility...</h3>
+            <p>Checking ChatGPT, Perplexity, and Google AI responses</p>
+        </div>
+        
+        <div class="results" id="results">
+            <h2 class="results-heading">Your AI Search Results</h2>
+            <div class="ai-response">
+                <div class="ai-logo">ChatGPT Response</div>
+                <div class="response-text" id="chatgpt-response">
+                    <!-- Generated response will go here -->
+                </div>
+            </div>
+            <div class="ai-response">
+                <div class="ai-logo">Google AI Response</div>
+                <div class="response-text" id="google-response">
+                    <!-- Generated response will go here -->
+                </div>
+            </div>
+            <div class="ai-response">
+                <div class="ai-logo">Perplexity Response</div>
+                <div class="response-text" id="perplexity-response">
+                    <!-- Generated response will go here -->
+                </div>
+            </div>
+            <div class="warning" id="warning-section">
+                <h3>⚠️ What This Means For Your Practice</h3>
+                <p id="warning-text">
+                    <!-- Generated warning will go here -->
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inline scripts will be injected from app.js -->
+    <script>
+    <!-- INLINE_SCRIPTS -->
+    </script>
+</body>
+</html>
