@@ -439,7 +439,7 @@ document.getElementById('simulatorForm').addEventListener('submit', function(e) 
     data.presence = formData.getAll('presence');
 
     // Send form data to HighLevel webhook
-    fetch('YOUR_HIGHLEVEL_WEBHOOK_URL', {
+    fetch('https://services.leadconnectorhq.com/hooks/sHKEF1jEdkwxdn5ZnqJc/webhook-trigger/f7557553-82bc-43ed-a74d-dfe73d3f4f9a', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
