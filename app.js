@@ -14,8 +14,11 @@ document.getElementById('simulatorForm').addEventListener('submit', function(e) 
     const data = {};
 
     // Get text inputs
+    data.fullName = formData.get('fullName');
     data.practiceName = formData.get('practiceName');
-    data.location = formData.get('location');
+    data.city = formData.get('city');
+    data.state = formData.get('state');
+    data.location = `${data.city}, ${data.state}`;
     data.email = formData.get('email');
     data.yearsInPractice = formData.get('yearsInPractice');
 
