@@ -26,12 +26,6 @@ document.getElementById('simulatorForm').addEventListener('submit', function(e) 
     data.services = formData.getAll('services');
     data.presence = formData.getAll('presence');
 
-    // Send form data to HighLevel webhook
-    fetch('https://services.leadconnectorhq.com/hooks/sHKEF1jEdkwxdn5ZnqJc/webhook-trigger/f7557553-82bc-43ed-a74d-dfe73d3f4f9a', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-    }).catch(err => console.error('Webhook error:', err));
 
     // Simulate API delay
     setTimeout(() => {
@@ -63,6 +57,13 @@ function generateResponses(data) {
 
     // Scroll to results
     document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+
+    // Send survey data + AI responses to HighLevel webhook
+    fetch('https://services.leadconnectorhq.com/hooks/sHKEF1jEdkwxdn5ZnqJc/webhook-trigger/f7557553-82bc-43ed-a74d-dfe73d3f4f9a', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...data, responses }),
+    }).catch(err => console.error('Webhook error:', err));
 }
 
 function generateAIResponses(data, hasWebsite, hasGoogle, hasSocial, hasMinimalPresence) {
