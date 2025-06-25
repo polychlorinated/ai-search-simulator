@@ -111,6 +111,34 @@
                     </div>
                 </div>
             </div>
+            <!-- New survey questions for deeper TCM/AI readiness metrics -->
+            <div class="form-group">
+                <label>Promote inclusivity or accessibility?</label>
+                <select id="inclusive" name="inclusive">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Offer community acupuncture or sliding scale pricing?</label>
+                <select id="slidingScale" name="slidingScale">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="specialize">Specialize in a condition or demographic?</label>
+                <input type="checkbox" id="specialize" name="specialize">
+                <input type="text" id="specialization" name="specialization" placeholder="e.g. fertility, veterans, pain management">
+            </div>
+            <div class="form-group">
+                <label>Request and respond to online reviews?</label>
+                <select id="reviewEngagement" name="reviewEngagement">
+                    <option value="yes">Yes</option>
+                    <option value="sometimes">Sometimes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
             <button type="submit" class="submit-btn">🔍 Run AI Search Simulation</button>
         </form>
         
@@ -121,30 +149,9 @@
         </div>
         
         <div class="results" id="results">
-            <h2 class="results-heading">Your AI Search Results</h2>
-            <div class="ai-response">
-                <div class="ai-logo">ChatGPT Response</div>
-                <div class="response-text" id="chatgpt-response">
-                    <!-- Generated response will go here -->
-                </div>
-            </div>
-            <div class="ai-response">
-                <div class="ai-logo">Google AI Response</div>
-                <div class="response-text" id="google-response">
-                    <!-- Generated response will go here -->
-                </div>
-            </div>
-            <div class="ai-response">
-                <div class="ai-logo">Perplexity Response</div>
-                <div class="response-text" id="perplexity-response">
-                    <!-- Generated response will go here -->
-                </div>
-            </div>
-            <div class="warning" id="warning-section">
-                <h3>⚠️ What This Means For Your Practice</h3>
-                <p id="warning-text">
-                    <!-- Generated warning will go here -->
-                </p>
+            <h2 class="results-heading">Your AI & Google Visibility Scores</h2>
+            <div id="score-results">
+                <!-- Scores and recommendation will be injected here -->
             </div>
         </div>
     </div>
