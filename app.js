@@ -72,12 +72,23 @@ document.getElementById('simulatorForm').addEventListener('submit', function(e) 
 
     const avgScore = (aiScore + googleScore) / 2;
     let recommendation = '';
-    if (avgScore < 6) recommendation =
-        '⚠️ Your clinic may be underrepresented online. Focus on reviews, claiming GBP, and improving digital presence.';
-    else if (avgScore < 8) recommendation =
-        '💡 You’re on the right track! Showcase specializations and collect testimonials to boost AI and Google visibility.';
-    else recommendation =
-        '🚀 Excellent! You’re visible on AI & Google. Maintain your edge with automated content and reputation management.';
+    // Build dynamic suggestions based on missing strengths
+    const suggestions = [];
+    if (presenceScore < 4) suggestions.push('claim and optimize your Google Business Profile');
+    if (reviewScore < 5) suggestions.push('encourage and respond to online reviews');
+    if (experienceScore < 5) suggestions.push('highlight your years of experience');
+    if (servicesScore < 5) suggestions.push('showcase a broader range of services');
+    if (inclusiveScore < 5) suggestions.push('promote inclusivity and accessibility');
+    if (affordabilityScore < 5) suggestions.push('consider offering sliding scale pricing');
+    if (specializationScore < 5) suggestions.push('clarify your specialization or niche focus');
+
+    if (avgScore < 6) {
+        recommendation = `⚠️ Your clinic may be underrepresented online. ${suggestions.join(', ')}.`;
+    } else if (avgScore < 8) {
+        recommendation = `💡 You’re on the right track! ${suggestions.length ? suggestions.join(', ') : 'Continue building your online visibility and reviews.'}`;
+    } else {
+        recommendation = '🚀 Excellent! You’re visible on AI & Google. Maintain your edge with automated content and reputation management.';
+    }
 
     // Display results
     document.getElementById('loading').style.display = 'none';
