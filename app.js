@@ -85,9 +85,9 @@ document.getElementById('simulatorForm').addEventListener('submit', function(e) 
     if (avgScore < 6) {
         recommendation = `⚠️ Your clinic may be underrepresented online. ${suggestions.join(', ')}.`;
     } else if (avgScore < 8) {
-        recommendation = `💡 You’re on the right track! ${suggestions.length ? suggestions.join(', ') : 'Continue building your online visibility and reviews.'}`;
+        recommendation = `💡 You're on the right track! ${suggestions.length ? suggestions.join(', ') : 'Continue building your online visibility and reviews.'}`;
     } else {
-        recommendation = '🚀 Excellent! You’re visible on AI & Google. Maintain your edge with automated content and reputation management.';
+        recommendation = '🚀 Excellent! You're visible on AI & Google. Maintain your edge with automated content and reputation management.';
     }
 
     // Display results
@@ -100,6 +100,19 @@ document.getElementById('simulatorForm').addEventListener('submit', function(e) 
         <p><strong>Overall Score:</strong> ${avgScore.toFixed(1)}/10</p>
         <p>${recommendation}</p>
     `;
+
+    // Send data to webhook
+    fetch('Yhttps://n8n.srv725961.hstgr.cloud/webhook-test/f7ac68b1-1e74-4632-a0c8-3db460639624', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            ...data,
+            aiScore: aiScore.toFixed(1),
+            googleScore: googleScore.toFixed(1),
+            overallScore: avgScore.toFixed(1),
+            recommendation
+        })
+    }).catch(err => console.error('Webhook error:', err));
 });
 /* End of extracted JS */
 
